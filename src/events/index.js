@@ -67,7 +67,7 @@ function subscribe(event, handler, context) {
 	var index = events.push({ event: event, handler: handler.bind(context) }) - 1;
 	return {
 		remove: function() {
-			delete events[index];
+			events.splice(index, 1);
 		}
 	};
 }
